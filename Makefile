@@ -6,7 +6,7 @@
 #
 
 ######
-REMOTE=http://github.com/double/ats-jansson
+REMOTE=http://github.com/doublec/ats-jansson
 ATSHOMEQ="$(ATSHOME)"
 ATSCC=$(ATSHOMEQ)/bin/atscc -Wall
 CFLAGS=`pkg-config jansson --cflags`
