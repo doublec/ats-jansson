@@ -4,8 +4,8 @@ ATSHOMEQ="$(ATSHOME)"
 ATSCC=$(ATSHOMEQ)/bin/atscc
 ATSCTRB=\
   $(ATSHOMEQ)/contrib/jansson/atsctrb_jansson.o
-JANSSONCFLAGS=`pkg-config jansson --cflags`
-JANSSONLIBS=`pkg-config jansson --libs`
+CFLAGS=`pkg-config jansson --cflags`
+LIBS=`pkg-config jansson --libs`
 ######
 
 checkall: compall cleanall
@@ -19,12 +19,12 @@ compall: \
 ######
 
 test01: jansson-test01.dats
-	$(ATSCC) $(JANSSONCFLAGS) -o test01 \
-          jansson-test01.dats $(ATSCTRB) $(JANSSONLIBS)
+	$(ATSCC) $(CFLAGS) -o test01 \
+          jansson-test01.dats $(ATSCTRB) $(LIBS)
 
 test02: jansson-test02.dats
-	$(ATSCC) $(JANSSONCFLAGS) -o test02 \
-          jansson-test02.dats $(ATSCTRB) $(JANSSONLIBS)
+	$(ATSCC) $(CFLAGS) -o test02 \
+          jansson-test02.dats $(ATSCTRB) $(LIBS)
 
 
 ######

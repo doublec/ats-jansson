@@ -9,11 +9,16 @@
 
 ATSHOMEQ="$(ATSHOME)"
 ATSCC=$(ATSHOMEQ)/bin/atscc -Wall
-JANSSONCFLAGS=`pkg-config jansson --cflags`
+CFLAGS=`pkg-config jansson --cflags`
 
 ######
 
-all: atsctrb_jansson.o clean
+all: .git atsctrb_jansson.o clean
+
+######
+
+.git:
+	rm Makefile README.ATS && git clone $(REMOTE) .
 
 ######
 
@@ -32,5 +37,8 @@ clean::
 
 cleanall: clean
 	rm -f atsctrb_jansson.o
+
+cleangit: .git
+	rm -r * && git checkout Makefile README.ATS && rm -rf .git .gitignore
 
 ###### end of [Makefile] ######
