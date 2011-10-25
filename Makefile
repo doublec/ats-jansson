@@ -28,7 +28,7 @@ atsctrb_jansson.o: jansson_dats.o
 ######
 
 jansson_dats.o: DATS/jansson.dats
-	$(ATSCC) $(XRCFLAGS) -o $@ -c DATS/jansson.dats
+	$(ATSCC) $(CFLAGS) -o $@ -c DATS/jansson.dats
 
 ######
 
