@@ -25,6 +25,14 @@ implement main () = () where {
   prval () = minus_addback(pf, one | root) 
 
   val () = printf("test\n", @())
+
+  val s = json_dumps (root, 0)
+  val () = assertloc (strptr_isnot_null s)
+
+  val () = print_strptr (s)
+  val () = print_newline ()
+  val () = strptr_free (s)
+
   val () = json_decref(root);
 //  val () = json_decref(c);
 } 

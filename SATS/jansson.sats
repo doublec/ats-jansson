@@ -334,4 +334,4 @@ fun json_loads
     input: string, flags: int, error: &json_error_t?
   ) : [l:addr] JSONptr (l, 0) = "mac#atsctrb_json_loads" 
 
-
+fun json_dumps {l:agz} {n:int} (root: !JSONptr (l, n), flags: int): [l2:addr] strptr l2 = "mac#json_dumps"
