@@ -50,6 +50,8 @@ fun JSONptr_isnot_null {l:addr} {n:int} (x: !JSONptr (l,n)):<> bool (l > null)
   = "mac#atspre_ptr_isnot_null"
 // end of [JSONptr_isnot_null]
 
+overload ~ with JSONptr_isnot_null
+
 fun JSONiter_is_null {l:addr} (x: !JSONiter l):<> bool (l == null)
   = "mac#atspre_ptr_is_null"
 // end of [JSONiter_is_null]
@@ -57,6 +59,8 @@ fun JSONiter_is_null {l:addr} (x: !JSONiter l):<> bool (l == null)
 fun JSONiter_isnot_null {l:addr} (x: !JSONiter l):<> bool (l > null)
   = "mac#atspre_ptr_isnot_null"
 // end of [JSONiter_isnot_null]
+
+overload ~ with JSONiter_isnot_null
 
 fun json_typeof
   {l:agz} {n:int} (json: !JSONptr (l, n)) : int = "mac#atsctrb_json_typeof"
