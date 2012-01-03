@@ -32,7 +32,7 @@ macdef JSON_NULL     = $extval (json_type, "JSON_NULL")
 absviewtype JSONptr (l:addr,n:int) // json_t*
 
 absview JSONptr_minus (addr, view)
-prfun JSONptr_minus_addback {l1:agz} {v:view} {n:int}
+prfun JSONptr_minus_addback {l1:addr} {v:view} {n:int}
   (pf1: JSONptr_minus (l1, v), pf2: v |
    obj: !JSONptr (l1, n) >> JSONptr (l1, n-1)): void
 
@@ -110,7 +110,7 @@ fun json_string_nocheck
   ) : [l:addr] JSONptr (l, 0) = "mac#atsctrb_json_string_nocheck"
 
 fun json_string_value
-  {l1:agz} {n:int} (
+  {l1:addr} {n:int} (
     json: !JSONptr (l1,n) >> JSONptr (l1, n+1)
   ) : [l2:addr] (JSONptr_minus (l1, strptr l2) | strptr l2)
   = "mac#atsctrb_json_string_value"
@@ -250,7 +250,7 @@ fun json_object_size
   ) : [n2:nat] int n2 = "mac#atsctrb_json_object_size"
 
 fun json_object_get
-  {l1:agz} (
+  {l1:addr} (
     json: !JSONptr (l1,0), key: string
   ) : [l2:addr] (minus(JSONptr (l1,0), JSONptr (l2,0)) | JSONptr (l2,0))
   = "mac#atsctrb_json_object_get"
@@ -266,7 +266,7 @@ fun json_object_set_nocheck
   ) : int = "mac#atsctrb_json_object_set_nocheck"
 
 fun json_object_set_new
-  {l1, l2:agz} {n1, n2:int} (
+  {l1:addr} {l2:agz} {n1, n2:int} (
     json: !JSONptr (l1, n1), key: string, value: JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_object_set_new"
 
