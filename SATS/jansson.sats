@@ -75,7 +75,7 @@ fun json_is_integer
 fun json_is_real
   {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_real"
 fun json_is_true
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_true"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_true"
 fun json_is_false
   {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_false"
 fun json_is_null
@@ -91,7 +91,7 @@ fun json_incref
   ) : JSONptr (l, 0) = "mac#atsctrb_json_incref"
    
 fun json_decref
-  {l:agz} (
+  {l:addr} (
     json: JSONptr (l, 0)
   ) : void = "mac#atsctrb_json_decref"
 
@@ -190,7 +190,7 @@ fun json_array_size
   ) : [n2:nat] int n2 = "mac#atsctrb_json_array_size"
 
 fun json_array_get
-  {n:nat} {n2:int} {l1:agz} (
+  {n:nat} {n2:int} {l1:addr} (
     json: !JSONptr (l1,n2), index: int n
   ) : [l2:addr] (minus(JSONptr (l1,n2), JSONptr (l2,n2)) | JSONptr (l2,n2))
   = "mac#atsctrb_json_array_get"
