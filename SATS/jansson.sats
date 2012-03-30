@@ -63,27 +63,27 @@ fun JSONiter_isnot_null {l:addr} (x: !JSONiter l):<> bool (l > null)
 overload ~ with JSONiter_isnot_null
 
 fun json_typeof
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : int = "mac#atsctrb_json_typeof"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : int = "mac#atsctrb_json_typeof"
 fun json_is_object
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_object"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_object"
 fun json_is_array
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_array"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_array"
 fun json_is_string
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_string"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_string"
 fun json_is_integer
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_integer"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_integer"
 fun json_is_real
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_real"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_real"
 fun json_is_true
   {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_true"
 fun json_is_false
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_false"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_false"
 fun json_is_null
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_null"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_null"
 fun json_is_number
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_number"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_number"
 fun json_is_boolean
-  {l:agz} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_boolean"
+  {l:addr} {n:int} (json: !JSONptr (l, n)) : bool = "mac#atsctrb_json_is_boolean"
 
 fun json_incref
   {l:agz} {n:int} (
