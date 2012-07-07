@@ -256,22 +256,22 @@ fun json_object_get
   = "mac#atsctrb_json_object_get"
 
 fun json_object_set
-  {l1, l2:agz} {n1, n2:int} (
+  {l1, l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n1), key: string, value: !JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_object_set"
 
 fun json_object_set_nocheck
-  {l1, l2:agz} {n1, n2:int} (
+  {l1, l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n2), key: string, value: !JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_object_set_nocheck"
 
 fun json_object_set_new
-  {l1:addr} {l2:agz} {n1, n2:int} (
+  {l1:addr} {l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n1), key: string, value: JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_object_set_new"
 
 fun json_object_set_new_nocheck
-  {l1, l2:agz} {n1, n2:int} (
+  {l1, l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n1), key: string, value: JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_object_set_new_nocheck"
 
