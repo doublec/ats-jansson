@@ -151,7 +151,7 @@ fun json_integer
   ) : [l:addr] JSONptr (l, 0) = "mac#atsctrb_json_integer"
 
 fun json_integer_value
-  {l:agz} {n:int} (
+  {l:addr} {n:int} (
     json: !JSONptr (l, n)
   ) : int = "mac#atsctrb_json_integer_value"
 
