@@ -196,32 +196,32 @@ fun json_array_get
   = "mac#atsctrb_json_array_get"
 
 fun json_array_set
-  {l1, l2:agz} {n:nat} {n2,n3:int} (
+  {l1, l2:addr} {n:nat} {n2,n3:int} (
     json: !JSONptr (l1, n2), index: int n, value: !JSONptr (l2, n3)
   ) : int = "mac#atsctrb_json_array_set"
 
 fun json_array_set_new
-  {l1, l2:agz} {n:nat} {n2, n3:int} (
+  {l1, l2:addr} {n:nat} {n2, n3:int} (
     json: !JSONptr (l1, n2), index: int n, value: JSONptr (l2, n3)
   ) : int = "mac#atsctrb_json_array_set_new"
 
 fun json_array_append
-  {l1, l2:agz} {n1, n2:int} (
+  {l1, l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n1), value: !JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_array_append"
 
 fun json_array_append_new
-  {l1, l2:agz} {n1, n2:int} (
+  {l1, l2:addr} {n1, n2:int} (
     json: !JSONptr (l1, n1), value: JSONptr (l2, n2)
   ) : int = "mac#atsctrb_json_array_append_new"
 
 fun json_array_insert
-  {l1, l2:agz} {n:nat} {n2, n3:int} (
+  {l1, l2:addr} {n:nat} {n2, n3:int} (
     json: !JSONptr (l1, n2), index: int n, value: !JSONptr (l2, n3)
   ) : int = "mac#atsctrb_json_array_insert"
 
 fun json_array_insert_new
-  {l1, l2:agz} {n:nat} {n2, n3:int} (
+  {l1, l2:addr} {n:nat} {n2, n3:int} (
     json: !JSONptr (l1, n2), index: int n, value: JSONptr (l2, n3)
   ) : int = "mac#atsctrb_json_array_insert_new"
 
