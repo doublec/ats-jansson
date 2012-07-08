@@ -187,12 +187,12 @@ fun json_array
 fun json_array_size
   {l:agz} {n:int} (
     json: !JSONptr (l, n)
-  ) : [n2:nat] int n2 = "mac#atsctrb_json_array_size"
+  ) : size_t = "mac#atsctrb_json_array_size"
 
 fun json_array_get
-  {n:nat} {n2:int} {l1:addr} (
-    json: !JSONptr (l1,n2), index: int n
-  ) : [l2:addr] (minus(JSONptr (l1,n2), JSONptr (l2,n2)) | JSONptr (l2,n2))
+  {n:int} {l1:addr} (
+    json: !JSONptr (l1,n), index: size_t
+  ) : [l2:addr] (minus(JSONptr (l1,n), JSONptr (l2,n)) | JSONptr (l2,n))
   = "mac#atsctrb_json_array_get"
 
 fun json_array_set
