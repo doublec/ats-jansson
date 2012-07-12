@@ -334,4 +334,12 @@ fun json_loads
     input: string, flags: int, error: &json_error_t?
   ) : [l:addr] JSONptr (l, 0) = "mac#atsctrb_json_loads" 
 
+
+// TODO: JSON_INDENT
+macdef JSON_COMPACT   = $extval (int, "JSON_COMPACT")
+macdef JSON_ENSURE_ASCII   = $extval (int, "JSON_ENSURE_ASCII")
+macdef JSON_SORT_KEYS   = $extval (int, "JSON_SORT_KEYS")
+macdef JSON_PRESERVE_ORDER   = $extval (int, "JSON_PRESERVE_ORDER")
+macdef JSON_ENCODE_ANY   = $extval (int, "JSON_ENCODE_ANY")
+
 fun json_dumps {l:agz} {n:int} (root: !JSONptr (l, n), flags: int): [l2:addr] strptr l2 = "mac#json_dumps"
