@@ -10,15 +10,11 @@ REMOTE=http://github.com/doublec/ats-jansson
 ATSHOMEQ="$(ATSHOME)"
 ATSCC=$(ATSHOMEQ)/bin/atscc -Wall
 CFLAGS=`pkg-config jansson --cflags`
+ATSCCLIB=$(shell pwd)/..
 
 ######
 
-all: .git atsctrb_jansson.o clean
-
-######
-
-.git:
-	rm Makefile README.ATS && git clone $(REMOTE) .
+all: atsctrb_jansson.o clean
 
 ######
 
@@ -28,7 +24,7 @@ atsctrb_jansson.o: jansson_dats.o
 ######
 
 jansson_dats.o: DATS/jansson.dats
-	$(ATSCC) $(CFLAGS) -o $@ -c DATS/jansson.dats
+	$(ATSCC) -I$(ATSCCLIB) -IATS$(ATSCCLIB) $(CFLAGS) -o $@ -c DATS/jansson.dats
 
 ######
 
@@ -37,8 +33,5 @@ clean::
 
 cleanall: clean
 	rm -f atsctrb_jansson.o
-
-cleangit: .git
-	rm -r * && git checkout Makefile README.ATS && rm -rf .git .gitignore
 
 ###### end of [Makefile] ######

@@ -13,7 +13,7 @@
 ** ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 ** OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 *)
-staload "contrib/jansson/SATS/jansson.sats"
+staload "jansson/SATS/jansson.sats"
 
 implement main () = () where {
   var e: json_error_t? 

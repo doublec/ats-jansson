@@ -2,8 +2,9 @@
 
 ATSHOMEQ="$(ATSHOME)"
 ATSCC=$(ATSHOMEQ)/bin/atscc
+ATSCCLIB=$(shell pwd)/../..
 ATSCTRB=\
-  $(ATSHOMEQ)/contrib/jansson/atsctrb_jansson.o
+  $(ATSCCLIB)/jansson/atsctrb_jansson.o
 CFLAGS=`pkg-config jansson --cflags`
 LIBS=`pkg-config jansson --libs`
 ######
@@ -19,11 +20,11 @@ compall: \
 ######
 
 test01: jansson-test01.dats
-	$(ATSCC) $(CFLAGS) -o test01 \
+	$(ATSCC) -I$(ATSCCLIB) -IATS$(ATSCCLIB) $(CFLAGS) -o test01 \
           jansson-test01.dats $(ATSCTRB) $(LIBS)
 
 test02: jansson-test02.dats
-	$(ATSCC) $(CFLAGS) -o test02 \
+	$(ATSCC) -I$(ATSCCLIB) -IATS$(ATSCCLIB) $(CFLAGS) -o test02 \
           jansson-test02.dats $(ATSCTRB) $(LIBS)
 
 
